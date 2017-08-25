@@ -21,12 +21,12 @@ public class LoginPage extends pageFactory.AbstractPage{
 	@FindBy(how=How.XPATH, using="//input[@value='Login']")
 	WebElement loginbutton;
 	
-	public LoginPage userID(){
-		entertext(Username, "DemoSalesManager");
+	public LoginPage userID(String arg_username){
+		entertext(Username, arg_username);
 		return this;
 	}
-	public LoginPage pwd(){
-		entertext(Pass, "crmsfa");
+	public LoginPage pwd(String arg_password){
+		entertext(Pass, arg_password);
 		return this;
 	}
 	public CrmSfaPage loginBtn(){

@@ -11,12 +11,12 @@ import pageFactory.UpdateLeadsPage;
 import pageFactory.ViewLeadsPage;
 
 public class Login extends AnnotationWrappers{
-	@Test
-	public void login() throws InterruptedException{
-
+	@Test(dataProvider="getHardCodedData")
+	public void login(String arg_un,String arg_pwd) throws InterruptedException{
+		
 		new LoginPage()
-		.userID()
-		.pwd()
+		.userID(arg_un)
+		.pwd(arg_pwd)
 		.loginBtn()
 		.crmsfa()
 		.findleadclick()
