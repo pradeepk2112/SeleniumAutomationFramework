@@ -14,7 +14,7 @@ public class MyHomePage extends AbstractPage {
 	@FindBy(how=How.XPATH, using="//a[text()='Leads']")
 	WebElement clicklead;
 	
-	public FindLeadsPage findleadclick(){
+	public FindLeadsPage mainleadclick(){
 		click(clicklead);
 		return new FindLeadsPage();
 	}

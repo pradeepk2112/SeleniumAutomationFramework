@@ -2,24 +2,35 @@ package pageTests;
 
 
 
+import java.io.IOException;
+
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import base.AnnotationWrappers;
+import dataProvider.ExcelDataProvider;
 import pageFactory.FindLeadsPage;
 import pageFactory.LoginPage;
 import pageFactory.UpdateLeadsPage;
 import pageFactory.ViewLeadsPage;
 
 public class EditLeadTest extends AnnotationWrappers{
-	@Test(dataProvider="getHardCodedData")
-	public void login(String arg_un,String arg_pwd) throws InterruptedException{
+	
+	@BeforeClass
+	public void setData(){
+		dataSheetName="Sheet1";
+		dataFileName="input.xlsx";
+	}
+	@Test(dataProvider="getData")
+	public void editlogin(String arg_un,String arg_pwd) throws InterruptedException{
 		
 		new LoginPage()
 		.userID(arg_un)
 		.pwd(arg_pwd)
 		.loginBtn()
 		.crmsfa()
-		.findleadclick()
+		.mainleadclick()
 		.clkfindleadmethod()
 		.firstnamemethod()
 		.findleadbtnmethod();

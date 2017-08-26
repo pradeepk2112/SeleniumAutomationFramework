@@ -18,5 +18,7 @@ public interface InterfacedWrappers {
 	public String getAttribute(WebElement elem, String attribute);
 
 	public void invokeApp();
+	public void quitApp();
+	public void sleep();
 
 }
